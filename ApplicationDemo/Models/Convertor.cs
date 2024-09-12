@@ -10,7 +10,7 @@ namespace ApplicationDemo.Models
 
 		public double? HeightInMeter { get; set; }
 
-
+		//Process Height here
 		public static double? CalculateHeightInMeters(double? height)
 		{
 			if (height == null) return null;
