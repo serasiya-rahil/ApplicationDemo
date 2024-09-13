@@ -11,13 +11,38 @@ namespace ApplicationDemo.Models
 
         public double? HeightInMeter { get; set; }
 
-        //Process Height here
+        public double? HeightInInches { get; set; }
+
+        public double? HeightInFoot { get; set; }
+
+        //Process Height in meters here
         public static double? CalculateHeightInMeters(double? height)
         {
             if (height == null) return null;
 
             return height / 100;
         }
+
+        //process height in inches here
+        public static double? CalcHeightInInches(double? height)
+        {
+            if (height == null) return null;
+            else
+            {
+                return Math.Round((double)height / 2.54);
+            }
+        }
+
+        // process height in foot here
+        public static double? CalcHeightInFoot(double? height)
+        {
+            if (height == null) return null;
+            else
+            {
+                return Math.Round((double)(height / 30.48));
+            }
+        }
+
     }
 
     public class Temperature
