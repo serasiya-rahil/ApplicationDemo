@@ -2,9 +2,17 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-      <h3><a asp-controller="Convert" asp-action="Index">Height Convertor</a></h3>
-      <h3><a asp-controller="Convert" asp-action="TemperatureConvertor">Temperature Convertor F->C</a></h3>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container text-center mt-5">
+    <h1 class="display-4 mb-4">Welcome to the Converter Hub</h1>
+
+    <div class="row justify-content-center">
+        <div class="col-md-6 mb-3">
+            <a asp-controller="Convert" asp-action="Index" class="btn btn-primary btn-lg btn-block">Height Converter</a>
+        </div>
+        <div class="col-md-6 mb-3">
+            <a asp-controller="Convert" asp-action="TemperatureConvertor" class="btn btn-primary btn-lg btn-block">Temperature Converter (F -> C)</a>
+        </div>
+    </div>
+
+    <p class="lead mt-4">Learn more about building Web apps with <a href="https://learn.microsoft.com/aspnet/core" target="_blank">ASP.NET Core</a>.</p>
 </div>
