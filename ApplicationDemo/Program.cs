@@ -24,7 +24,7 @@ namespace ApplicationDemo
 
 			app.MapControllerRoute(
 				name: "default",
-				pattern: "{controller=Convert}/{action=Index}/{id?}");
+				pattern: "{controller=Convert}/{action=TemperatureConvertor}/{id?}");
 
 			app.Run();
 		}

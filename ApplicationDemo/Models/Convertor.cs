@@ -18,4 +18,22 @@ namespace ApplicationDemo.Models
 			return height / 100;
 		}
 	}
+
+	public class Temperature
+	{
+		[Required(ErrorMessage = "Temp in Farenheit is Required")]
+		public double? TempInFarenheit { get; set; }
+
+		public double? TempInCelcius { get; set; }
+
+		public static double? FarenheitToCelcius(double? TempInFarenheit)
+		{
+			if (TempInFarenheit == null) return null;
+			else
+			{
+				return ((TempInFarenheit - 32) * (5.0 / 9.0));
+
+			}
+		}
+	}
 }

@@ -1,0 +1,40 @@
+﻿@model ApplicationDemo.Models.Temperature
+
+@{
+    ViewData["Title"] = "TemperatureConvertor";
+}
+
+<h1>TemperatureConvertor</h1>
+
+<h4>Temperature</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-controller="Convert" asp-action="TemperatureConvertor" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="TempInFarenheit" class="control-label"></label>
+                <input asp-for="TempInFarenheit" class="form-control" />
+                <span asp-validation-for="TempInFarenheit" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label"></label>
+                <input asp-for="TempInCelcius" class="form-control" disabled="True"/>
+                <span asp-validation-for="TempInCelcius" class="text-danger"></span>
+            </div>
+            <br />
+          
+            <div class="form-group">
+                <input type="submit" value="Submit" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

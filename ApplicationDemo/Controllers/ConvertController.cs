@@ -22,5 +22,22 @@ namespace ApplicationDemo.Controllers
 			}
 			return View(convertor);
 		}
+
+		[HttpGet]
+		public IActionResult TemperatureConvertor()
+		{
+			return View(new Temperature());
+		}
+
+		[HttpPost]
+		public IActionResult TemperatureConvertor(Temperature temperature)
+		{
+			if (ModelState.IsValid)
+			{
+				temperature.TempInCelcius = Temperature.FarenheitToCelcius(temperature.TempInFarenheit);
+			}
+
+			return View(temperature);
+		}
 	}
 }
